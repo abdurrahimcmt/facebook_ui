@@ -1,10 +1,13 @@
 import 'package:facebook_ui/config/palette.dart';
 import 'package:facebook_ui/data/data.dart';
-import 'package:facebook_ui/widget/circle_button.dart';
-import 'package:facebook_ui/widget/create_post_container.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../widgets/circle_button.dart';
+import '../widgets/create_post_container.dart';
+import '../widgets/rooms.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -50,6 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverToBoxAdapter(
             child: CreatePostContainer(
               currentUser: currentUser,
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+            sliver: SliverToBoxAdapter(
+              child: Rooms(onlineUsers: onlineUsers),
             ),
           ),
         ],
