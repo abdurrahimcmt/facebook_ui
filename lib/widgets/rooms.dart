@@ -29,10 +29,19 @@ class Rooms extends StatelessWidget {
             );
           }
           User user = onlineUsers[index - 1];
-          return ProfileAvatar(
-            imageUrl: user.imageUrl,
-            isActive: true,
-          );
+          if (index < 10) {
+            return ProfileAvatar(
+              imageUrl: user.imageUrl,
+              isActive: true,
+              isBorder: false,
+            );
+          } else {
+            return ProfileAvatar(
+              imageUrl: user.imageUrl,
+              isActive: false,
+              isBorder: false,
+            );
+          }
         },
       ),
     );

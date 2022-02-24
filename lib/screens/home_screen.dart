@@ -7,7 +7,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 import '../widgets/circle_button.dart';
 import '../widgets/create_post_container.dart';
-import '../widgets/rooms.dart';
+import '../widgets/stories.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverPadding(
             padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
             sliver: SliverToBoxAdapter(
-              child: Rooms(onlineUsers: onlineUsers),
+              child: Stories(currentUser: currentUser, stories: stories),
             ),
           ),
         ],
